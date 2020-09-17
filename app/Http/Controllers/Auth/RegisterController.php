@@ -72,25 +72,17 @@ class RegisterController extends Controller
         //引数 $data から name='img_name'を取得(アップロードするファイル情報)
         $imageFile = $data['img_name'];
 
-        $list = FileUploadServices::fileUpload($imageFile);
+        $path = Storage::disk('s3')->putFile('matching-app', $imageFile, 'public');
 
-        list($extension, $fileNameToStore, $fileData) = $list;
+        $image_path = Storage::disk('s3')->url($path);
 
-        $data_url = CheckExtensionServices::checkExtension($fileData, $extension);
-
-        //画像アップロード(Imageクラス makeメソッドを使用)
-        $image = Image::make($data_url);
-
-        //画像を横400px, 縦400pxにリサイズし保存
-        $image->resize(400,400)->save(storage_path() . '/app/storage/app/public/images' . $fileNameToStore );
-                
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'self_introduction' => $data['self_introduction'],
             'sex' => $data['sex'],
-            'img_name' => $fileNameToStore,
+            'img_name' => $image_path,
         ]);
     }
 }
