@@ -61,8 +61,6 @@ return [
             'secret' => env('A+5GwFgwe9vghwkURR8KfJpKETBUG2QFioKoZII6'),
             'region' => env('us-east-1'),
             'bucket' => env('matching-app'),
-            'url' => env('AWS_URL'),
-            'endpoint' => env('AWS_ENDPOINT'),
         ],
 
     ],

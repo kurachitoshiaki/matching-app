@@ -51,8 +51,8 @@ return [
             'username' => env('DB_USERNAME', 'forge'),
             'password' => env('DB_PASSWORD', ''),
             //ローカル環境と本番環境で切り替え
-            // 'unix_socket' => '/Applications/MAMP/tmp/mysql/mysql.sock',
-            'unix_socket' => env('DB_SOCKET', ''),
+            'unix_socket' => '/Applications/MAMP/tmp/mysql/mysql.sock',
+            // 'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',
