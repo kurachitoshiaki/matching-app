@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
+use Storage;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -69,7 +70,6 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        //引数 $data から name='img_name'を取得(アップロードするファイル情報)
         $imageFile = $data['img_name'];
 
         $path = Storage::disk('s3')->putFile('matching-app', $imageFile, 'public');
