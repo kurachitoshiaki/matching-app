@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Validator;
 use Intervention\Image\Facades\Image;
 use App\Services\FileUploadServices;
 use App\Services\CheckExtensionServices;
+use JD\Cloudder\Facades\Cloudder;
 
 class RegisterController extends Controller
 {
@@ -70,28 +71,26 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        //引数 $data から name='img_name'を取得(アップロードするファイル情報)
-        $imageFile = $data['img_name'];
-
-        $list = FileUploadServices::fileUpload($imageFile);
-
-        list($extension, $fileNameToStore, $fileData) = $list;
-
-        $data_url = CheckExtensionServices::checkExtension($fileData, $extension);
-
-        //画像アップロード(Imageクラス makeメソッドを使用)
-        $image = Image::make($data_url);
-
-        //画像を横400px, 縦400pxにリサイズし保存
-        $image->resize(400,400)->save(storage_path() . '/app/public/images' . $fileNameToStore );
-                
+        if(!is_null($request['img_name'])){
+            $image_name = $request['img_name'];
+            // Cloudinaryへアップロード
+            Cloudder::upload($image_name, null);
+            list($width, $height) = getimagesize($image_name);
+            // 直前にアップロードした画像のユニークIDを取得します。
+            $publicId = Cloudder::getPublicId();
+            // URLを生成します
+            $logoUrl = Cloudder::show($publicId, [
+                'width'     => 200,
+                'height'    => 200
+            ]);
+        }       
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'self_introduction' => $data['self_introduction'],
             'sex' => $data['sex'],
-            'img_name' => $fileNameToStore,
+            'img_name' => $logoUrl,
         ]);
     }
 }
