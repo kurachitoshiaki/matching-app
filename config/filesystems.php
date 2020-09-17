@@ -57,10 +57,10 @@ return [
 
         's3' => [
             'driver' => 's3',
-            'key' => env('AWS_ACCESS_KEY_ID'),
-            'secret' => env('AWS_SECRET_ACCESS_KEY'),
-            'region' => env('AWS_DEFAULT_REGION'),
-            'bucket' => env('AWS_BUCKET'),
+            'key' => env('AKIAQSQXLCKVI2WT36GR'),
+            'secret' => env('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'),
+            'region' => env('us-east-1'),
+            'bucket' => env('matching-app'),
             'url' => env('AWS_URL'),
             'endpoint' => env('AWS_ENDPOINT'),
         ],
