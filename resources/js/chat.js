@@ -19,7 +19,7 @@ $(document).ready(function() {
           })
           
           .done(function(data){
-              //console.log(data);
+              console.log(data);
               event.target.value = '';
           });
 
