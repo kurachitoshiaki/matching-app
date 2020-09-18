@@ -43,13 +43,13 @@ class UserController extends Controller
                 'width'     => 200,
                 'height'    => 200
             ]);
+            $user->img_name = $logoUrl;
         }
         
         $user->name = $request->name;
         $user->email = $request->email;
         $user->sex = $request->sex;
         $user->self_introduction = $request->self_introduction;
-        $user->img_name = $logoUrl;
 
         $user->save();
 
