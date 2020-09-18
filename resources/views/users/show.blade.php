@@ -7,7 +7,7 @@
     <header class="header">
       <p class='header_logo'>
       <a href="{{ route('home') }}">
-      <img src="https://res.cloudinary.com/matching-app202009/image/upload/v1600367675/techpit-match-icon_pbma2j.png">
+      <img src="https://res.cloudinary.com/matching-app202009/image/upload/v1600407276/match-icon_fdjgnu.png">
       </a>
       </p>
     </header>
