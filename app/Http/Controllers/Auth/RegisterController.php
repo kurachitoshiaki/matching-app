@@ -71,8 +71,8 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        if(!is_null($request['img_name'])){
-            $image_name = $request['img_name'];
+        if(!is_null($data['img_name'])){
+            $image_name = $data['img_name'];
             // Cloudinaryへアップロード
             Cloudder::upload($image_name, null);
             list($width, $height) = getimagesize($image_name);

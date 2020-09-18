@@ -1,4 +1,5 @@
 require('./bootstrap');
+
 require('./users')
 
 require('./jquery.jTinder');
