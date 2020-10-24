@@ -40,8 +40,8 @@ class UserController extends Controller
             $publicId = Cloudder::getPublicId();
             // URLを生成します
             $logoUrl = Cloudder::show($publicId, [
-                'width'     => 200,
-                'height'    => 200
+                'width'     => 640,
+                'height'    => 640
             ]);
             $user->img_name = $logoUrl;
         }else{

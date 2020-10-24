@@ -80,8 +80,8 @@ class RegisterController extends Controller
             $publicId = Cloudder::getPublicId();
             // URLを生成します
             $logoUrl = Cloudder::show($publicId, [
-                'width'     => 200,
-                'height'    => 200
+                'width'     => 640,
+                'height'    => 640
             ]);
         }       
         return User::create([
