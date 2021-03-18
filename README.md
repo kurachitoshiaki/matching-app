@@ -2,14 +2,24 @@
 
 # 📦 Features
 
-## ・Asynchronous communication
+## ・Profile
 
-![Ajax](https://gyazo.com/9cf7633352c8bfe171a412b8e9965e4f/raw)
+![Profile](https://gyazo.com/69ae6dbbaa2db3bd466a827b3f4b9bef/raw)
 　
-## ・Automatic updating
+## ・Matching
 
-![auto](https://gyazo.com/e51f17a240277206d8ecdf436ca2d9ba/raw)
+![matching](https://gyazo.com/e51f17a240277206d8ecdf436ca2d9ba/raw)
+
+## ・talk_room
+
+![matching](https://gyazo.com/3c45fc1dc0bfd4e3f35fd11bb0fd2444/raw)
+
+## ・asynchronoustalk
+
+![matching](https://gyazo.com/5df569f8ca33c9bf47e013e9c2170a39/raw)
+
+
+
+
 　
-## ・Incremental search
 
-![Incremental search](https://gyazo.com/5e479a2fe5909f3d5e89a43b75fd5b00/raw)
