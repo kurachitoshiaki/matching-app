@@ -4,7 +4,7 @@
 
 ## ・Asynchronous communication
 
-![Ajax](https://gyazo.com/9cf7633352c8bfe171a412b8e9965e4f)
+![Ajax](https://gyazo.com/9cf7633352c8bfe171a412b8e9965e4f/raw)
 　
 ## ・Automatic updating
 
